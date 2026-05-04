@@ -1,0 +1,26 @@
+spring:
+  graphql:
+    graphiql:
+      enabled: true
+    path: /graphql
+  datasource:
+    url: jdbc:h2:mem:blogdb;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+
+server:
+  port: ${PORT:8000}
+
+jwt:
+  secret: BlogAppSecretKey2024SuperSecretKeyForJWTTokenGeneration123456
+  expiration: 86400000
